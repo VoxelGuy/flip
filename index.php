@@ -19,7 +19,6 @@
   <div class="container-fluid">
     <span class="navbar-brand d-flex align-items-center gap-2">
       <span class="badge bg-warning text-dark">Flip7</span>
-      <span class="opacity-75">Solo vs IA</span>
     </span>
 
     <div class="d-flex align-items-center gap-2">

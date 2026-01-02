@@ -1,15 +1,29 @@
 :root{
-  --card-bg: rgba(20, 20, 25, 0.75);
-  --card-border: rgba(255,255,255,0.10);
+  --card-bg: rgba(20, 20, 25, 0.82);
+  --card-border: rgba(255,255,255,0.12);
+  --text-main: #f4f7fb;
+  --text-muted: #c7cdd8;
 }
 
 .bg-app{
-  background:
-    radial-gradient(1200px 700px at 20% 10%, rgba(255,193,7,0.10), transparent 60%),
-    radial-gradient(900px 600px at 80% 0%, rgba(13,202,240,0.10), transparent 55%),
-    radial-gradient(900px 600px at 50% 90%, rgba(220,53,69,0.08), transparent 55%),
-    #0b0d10;
-  color: #e9ecef;
+  position: relative;
+  min-height: 100vh;
+  background-color: #0b0d10;
+  background-image:
+    radial-gradient(1100px 650px at 20% 8%, rgba(255,193,7,0.16), transparent 55%),
+    radial-gradient(1200px 720px at 80% 0%, rgba(13,202,240,0.14), transparent 60%),
+    radial-gradient(1200px 780px at 50% 88%, rgba(220,53,69,0.12), transparent 55%);
+  background-blend-mode: screen;
+  color: var(--text-main);
+}
+
+.bg-app::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(900px 650px at 50% 40%, rgba(255,255,255,0.06), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .card-glass{
@@ -17,6 +31,42 @@
   border: 1px solid var(--card-border);
   border-radius: 18px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  color: var(--text-main);
+  position: relative;
+  z-index: 1;
+}
+
+.text-secondary{
+  color: var(--text-muted) !important;
+}
+
+.form-label,
+.card-body h1,
+.card-body strong,
+.navbar-dark .navbar-brand{
+  color: var(--text-main);
+}
+
+.form-select,
+.form-control{
+  background-color: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.18);
+  color: var(--text-main);
+}
+
+.form-select:focus,
+.form-control:focus{
+  background-color: rgba(255,255,255,0.06);
+  border-color: rgba(255,193,7,0.5);
+  color: var(--text-main);
+  box-shadow: 0 0 0 0.2rem rgba(255,193,7,0.25);
+}
+
+#selectOpponents{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  min-height: 3.2rem;
+  font-size: 1.05rem;
 }
 
 .players-grid{
